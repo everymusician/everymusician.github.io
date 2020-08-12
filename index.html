@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>Lucas Wong</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dr. Lucas Wong does music teaching, masterclass, adjudication, performance, music-releated consultation, and website and web-app development.">
+    <meta name="og:title" property="og:title" content="Dr. Lucas Wong | Musician, Entrepreneur, Web Developer">
+    <meta name="og:image" property="og:image" content="https://raw.githubusercontent.com/lucastwong/website/master/Lucas%20Wong%20-%202.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="canonical" href="https://www.lucaswongpiano.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        line-height: 1.8;
+        color: #818181;
+      }
+
+      h2 {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        font-size: 8vmin;
+        text-transform: uppercase;
+        color: #4267B2;
+        font-weight: 600;
+        margin-bottom: 10vmin;
+      }
+
+      h4 {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-bottom: 2vmin;
+      }
+
+      .jumbotron {
+        background-color: #fff;
+        color: #4267B2;
+        padding: 10px 25px;
+        line-height: 1.7em;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+      }
+
+      .container-fluid {
+        padding: 10vmin 10vmin;
+      }
+
+      .bg-grey {
+        background-color: #f6f6f6;
+      }
+
+      .logo-small {
+        color: #4267B2;
+        font-size: 50px;
+      }
+
+      .logo {
+        color: #4267B2;
+        font-size: 200px;
+      }
+
+      .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+      }
+
+      .carousel-indicators {
+        bottom: -8vmin;
+      }
+
+      .carousel-indicators li {
+        border-color: #4267B2;
+      }
+
+      .carousel-indicators li.active {
+        background-color: #4267B2;
+      }
+
+      .item h4 {
+        line-height: 1.375em;
+        font-weight: 400;
+        margin: 10vmin 0px;
+      }
+
+      .item span {
+        font-style: normal;
+      }
+
+      .panel {
+        border: 1px solid #4267B2;
+        border-radius: 0px !important;
+        transition: box-shadow 0.5s;
+      }
+
+      .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+      }
+
+      .panel-footer .btn:hover {
+        border: 1px solid #4267B2;
+        background-color: #fff !important;
+        color: #4267B2;
+      }
+
+      .panel-heading {
+        color: #000 !important;
+        background-color: #dae2f1 !important;
+        padding: 25px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      .panel-footer {
+        background-color: white !important;
+      }
+
+      .panel-footer h3 {
+        font-size: 32px;
+      }
+
+      .panel-footer h4 {
+        color: #aaa;
+        font-size: 8vmin;
+      }
+
+      .panel-footer .btn {
+        margin: 15px 0;
+        color: #fff;
+      }
+
+      .navbar {
+        margin-bottom: 0;
+        background-color: #4267B2;
+        z-index: 9999;
+        border: 0;
+        line-height: 1.42857143 !important;
+        border-radius: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+      }
+
+      .navbar li a,
+      .navbar .navbar-brand {
+        color: #fff !important;
+      }
+
+      .navbar-nav li a:hover,
+      .navbar-nav li.active a {
+        color: #4267B2 !important;
+        background-color: #fff !important;
+      }
+
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+      }
+
+      .glyphicon {
+        font-size: 8vmin;
+        margin-bottom: 20px;
+        color: #4267B2;
+      }
+
+      .slideanim {
+        visibility: hidden;
+      }
+
+      .slide {
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+      }
+
+      @keyframes slide {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+
+      @-webkit-keyframes slide {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateY(70%);
+        }
+
+        100% {
+          opacity: 1;
+          -webkit-transform: translateY(0%);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .col-sm-4 {
+          text-align: center;
+          margin: 25px 0;
+        }
+
+        .btn-lg {
+          width: 100%;
+          margin-bottom: 35px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .logo {
+          font-size: 150px;
+        }
+      }
+
+      .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bg-1 {
+        background-color: #dae2f1;
+      }
+
+    </style>
+  </head>
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#myPage">Lucas Wong</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about1">MUSIC</a></li>
+            <li><a href="#about2">WEB DEVELOPMENT</a></li>
+            <li><a href="#latest">LATEST PROJECTS</a></li>
+            <li><a href="#recordings">RECORDINGS</a></li>
+            <li><a href="#perf">PERFORMANCES</a></li>
+            <li><a href="#review">REVIEWS</a></li>
+            <li><a href="mailto:lucastwong@icloud.com">CONTACT</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid text-center">
+      <br>
+      <img src="https://raw.githubusercontent.com/lucastwong/website/master/Lucas%20Wong%20-%202.jpg" alt="Lucas Wong" class="rounded mx-auto d-block img-responsive center-block">
+      <a href="#about" title="Go On">
+        <br><br>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </a>
+
+      <div class="jumbotron text-center">
+        <h1>Musician. Enterpreneur. Web Developer.<br></h1><br><br>
+        <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:7picC94A1xTKno83u6qrpZ?si=xcVJvYxRRFyXwcgA3EA_HA&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+        
+        <p><strong><br>Dr. Lucas Wong does music teaching (in person and remote), masterclass, adjudication, performance (solo and collaborative), music-releated consultation, and website and web-app development.</strong></p><br><br>
+      </div>
+    </div>
+    <script>
+        function togglebio() {
+                $("#shortbio").collapse('hide');
+                $("#longbio").collapse('show');
+        }
+        </script>
+    <!-- Container (About Section) -->
+    <div id="about1" class="container-fluid bg-1 text-center">
+
+        <span class="glyphicon glyphicon-music logo"></span>
+        <h2>Music</h2>
+      <div class="row collapse in" id="shortbio">
+        <div class="col-sm-12">
+          <h4>Lucas Wong is earning a diversified career as a soloist, chamber musician, pedagogue, and vocal coach. He has performed in many prestigious venues across a dozen countries on four continents. Lucas Wong has collaborated with world-renowned artists such as trombonist Joseph Alessi, violinist Soovin Kim, mezzo-soprano Susanne Mentzer, bassoonist Frank Morelli, clarinetist David Shifrin, and Erhu artist Fei Song. A versatile partner for both instrumentalists and vocalists, he is also a superb opera coach and assistant conductor. He has appeared on professional rosters of the New York City Opera, Opera America, and Metropolitan Opera National Council Auditions in Connecticut.</h4>
+          <br><button class="btn btn-default btn-lg btn-success" onclick="togglebio();">View full biography</button>
+        </div>
+      </div>
+      <div class="row collapse" id="longbio">
+        <div class="col-sm-12">
+          <h4>The author of "The Multi-Functional Pianist" and inventor of "4D Piano", Canadian pianist Lucas Wong is earning a diversified career as a soloist, chamber musician, pedagogue, and vocal coach. Praised for “his gifts for colour, nuance and tasteful dynamic contrasts” (Gramophone), he has performed in many prestigious venues across a dozen countries on four continents. Career highlights include multiple engagements at the Carnegie Hall, innovative recital programs like "Beyond 88" and the "Mostly Debussy" series, a complete performance of Des Knaben Wunderhorn at the Shanghai Conservatory, directorship of the complete Duparc melodies at Songfest in LA, and collaborations with American composers such as William Bolcom, Jake Heggie, Libby Larsen, and John Musto. Wong's academic achievements include his Yale doctoral thesis "Perspectives on Claude Debussy’s Douze Études” and the article "Humour in Late Debussy: Multiple Perspectives on Douze Études" published on the Musical Times.<br><br>Lucas Wong has collaborated with world-renowned artists such as trombonist Joseph Alessi, violinist Soovin Kim, mezzo-soprano Susanne Mentzer, bassoonist Frank Morelli, clarinetist David Shifrin, and Erhu artist Fei Song. A versatile partner for both instrumentalists and vocalists, he is also a superb opera coach and assistant conductor. He has appeared on professional rosters of the New York City Opera, Opera America, and Metropolitan Opera National Council Auditions in Connecticut. He is the founding artistic director of Liederfest in Suzhou. As an educator and administrator, Lucas Wong was a founding faculty member at the Soochow University School of Music (China), where he served as piano professor and coordinator for chamber music, collaborative piano, and staff accompanists. He has been regularly invited to give masterclasses and adjudications in top institutions, festivals, and competitions.<br><br>Lucas Wong began his early training at the Hong Kong Academy for Performing Arts. He is a graduate of the University of British Columbia (B.Mus.) and Yale School of Music (M.M., M.M.A., D.M.A.). His key mentors include Boris Berman, Frank Corliss, Claude Frank, Peter Frankl, Michael Friedmann, Margo Garrett, Martin Katz, Warren Jones, Julian Martin, Edward Parker, Tak Poon, Richard Rephann, Rena Sharon, and Robert Silverman. He holds a Post-Graduate Associateship from the Yale Institute of Sacred Music, a Post-Graduate Collaborative Piano Fellowship from Bard College Conservatory of Music, and a Teaching Fellowship at the Yale Department of Music. He has been generously supported by the Début Competition (Canada), the Marilyn Horne Foundation, the Yale School of Music Alumni Association, the British Columbia Arts Council, and the Vancouver Foundation. He earned his ARCT Teacher’s diploma from the Royal Conservatory of Music in Toronto, for which he received a Gold Medal, the conservatory’s highest honor.</h4>
+        </div>
+      </div>
+    </div>
+    <div id="about2" class="container-fluid text-center">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-sm-12">
+          <span class="glyphicon glyphicon-globe logo"></span>
+          <h2>Web Development</h2>
+          <h4>Inventor of "4D Piano", Lucas Wong has designed more than half a dozen web apps on www.findbach.com, which have reached 10K+ visits and 1K+ followers. He continuously works with clients and provides web consultations and tutorials for both frontend and backend solutions. He is familiar with C++, Javascript, HTML, CSS, Bootstrap, and the Wix platform. Lucas Wong also founded eMus, an online musical feedback service that provides a new, 21st-century educational tool for anyone who performs music.</h4>
+<br><a href="https://www.findbach.com" class="btn btn-default btn-lg btn-success" role="button">Explore Findbach</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Container (Benefits Section) -->
+    <div id="latest" class="container-fluid bg-1 text-center">
+      <h2>Latest Projects</h2>
+      <br>
+      <div class="row">
+        <div class="col-sm-3">
+          <h4>4D Piano</h4>
+          <img src="https://raw.githubusercontent.com/lucastwong/lucastwong.github.io/master/iPhone%20X.png" alt="4D Piano" class="rounded mx-auto d-block img-responsive center-block"><br>
+          <p><strong>A 21st century missing link between a live piano and a precorded track.</strong><br><br>With an extensive library of 600+ selections in numerous styles, anyone can now rehearse with an organic professional accompaniment with rubato. During the Covid pandemic, 4D Piano partnered with singers who livestreamed in the SoCal Vocalist Relief Fund and performance videos for the Eighth Strings, among other organizations around the world.</p>
+          <a href="https://www.findbach.com/4d" class="btn btn-default btn-success" role="button">Explore 4D Piano</a><br><br><br><br>
+        </div>
+        <div class="col-sm-3">
+          <h4>The Multi-Functional Pianist</h4>
+          <img src="https://raw.githubusercontent.com/lucastwong/website/master/Events%20-%200329.jpg" alt="The Multi-Functional Pianist" class="rounded mx-auto d-block img-responsive center-block"><br>
+          <p><strong>Innovative and Contemporary Approaches to Keyboard Harmony, Improvisation, Score Reading, and Reduction Techniques.</strong><br><br>Over the course of five chapters, the trajectory of skills is examined in an “A-to-Z” approach. “A” is perhaps a piano major with some formal functional keyboard training, while “Z” is the keyboard wizard, at the graduate level, who possesses a great functional capacity as a successful collaborative pianist.</p>
+          <a href="https://the-multi-functional-pianist.teachable.com/p/the-multi-functional-pianist" class="btn btn-default btn-success" role="button">View this course</a><br><br><br><br>
+        </div>
+        <div class="col-sm-3">
+          <h4>Rediscovering Couperin and Rameau</h4>
+          <img src="https://raw.githubusercontent.com/lucastwong/lucastwong.github.io/master/Cover.jpg" alt="Rediscovering Couperin and Rameau" class="rounded mx-auto d-block img-responsive center-block"><br>
+          <p><strong>On FAZIOLI F308 with four pedals.</strong><br><br>“Put simply, Lucas Wong’s piano interpretations of Couperin and Rameau yield nothing to Marcelle Meyer, Alexandre Tharaud or Angela Hewitt for sensitivity and refinement…his gifts for colour, nuance and tasteful dynamic contrasts…sexily shaped trills…the point and precision of his détaché articulation…discreet use of agogics and his mastery of the kind of overlapping finger legato…attention to detail and clear commitment unquestionably come across, abetted by fine engineering. Recommended.” (Gramophone)</p>
+          <a href="https://music.apple.com/us/album/rediscovering-couperin-rameau/1437015145" class="btn btn-default btn-success" role="button">Download this recording</a><br><br><br><br>
+        </div>
+        <div class="col-sm-3">
+          <h4>Humour in late Debussy</h4>
+          <img src="https://raw.githubusercontent.com/lucastwong/website/master/mt%20cover%20summer%202016.jpg" alt="Humour in Debussy" class="rounded mx-auto d-block img-responsive center-block"><br>
+          <p><strong>Multiple Perspectives of Douze études.</strong><br><br>Through detailed examination and comparison, Claude Debussy’s Douze études — originally organized into two volumes — are regrouped according to four tendencies that may be useful to contemporary performers: chopinesque, homage, avant-garde, and parody/humour. Humour is the most prominent of these, from the first bar of a child-like study to sophisticated allusions to Emmanuel Chabrier’s music. In-depth analyses of three particular études (Pour les octaves, Pour les degrés chromatiques, and Pour les notes répétées) elucidate the role of humour, which is often neglected in late Debussy style. Humour provides a vital source of pleasure for performers of the Douze études, but it also functioned as a medical cure for Debussy, allowing him to compose during a period of significant global and personal turmoil.</p>
+          <a href="https://www.jstor.org/stable/44862507?seq=1" class="btn btn-default btn-success" role="button">Read this article</a><br><br><br><br>
+        </div>
+      </div>
+    </div>
+    <div id="recordings" class="container-fluid text-center">
+      <h2>Recordings</h2><br>
+      <div class="row text-center">
+        <div class="col-sm-6">
+          <h4>Ma contrebasse chèrie</h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://open.spotify.com/embed/album/23goDJflkuRVzzA2GbW8HE" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div><br><br>
+        </div>
+        <div class="col-sm-6">
+          <h4>Remembering Debussy</h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe src="https://open.spotify.com/embed/album/1uUvBgwbrBtUdFmz1mQ6oV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div><br><br>
+        </div>
+      </div><br>
+      <h4>More recordings on:</h4>
+      <div class="row text-center">
+        <div class="col-sm-2">
+          <a href="https://www.allmusic.com/album/scherzando-piano-music-of-debussy-chabrier-mw0003068112">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Cover.jpg" style="width:100%"><br>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://ubc-music.squarespace.com/recording-database/tag/Jesse+Read">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Tchaikovsky.jpg" style="width:100%"><br>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://open.spotify.com/album/4lKsnnAuh8zYmXPCvW6ukX?highlight=spotify:track:1gxXigAZqO6pyfBCf328Uq">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Taichi.jpg" style="width:100%"><br>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://www.operaamerica.org/content/about/publications/songbook/details.aspx?id=37">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Opera%20America.png" style="width:100%"><br>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://open.spotify.com/album/7q4jpl3neBEhy3kaEmqBWJ">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Autumn.jpg" style="width:100%"><br>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://delosmusic.com/recording/sing-ye-birds-a-joyous-song/">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/Naxos.jpg" style="width:100%"><br>
+        </div>
+      </div><br>
+      </a>
+    </div>
+    <!-- Container (Portfolio Section) -->
+    <div id="perf" class="container-fluid text-center bg-1">
+      <h2>Performances</h2><br>
+      <div class="row text-center">
+        <div class="col-sm-6">
+          <h4>Mostly Debussy V</h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mov6-Be2mSc" allowfullscreen></iframe>
+          </div><br><br>
+        </div>
+        <div class="col-sm-6">
+          <h4>A Tribute to William Bolcom</h4>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YJOuh3R8COg" allowfullscreen></iframe>
+          </div><br><br>
+        </div>
+      </div><br>
+      <h4>More performances are available on:</h4>
+      <div class="row text-center">
+        <div class="col-sm-6">
+          <a href="https://www.youtube.com/playlist?list=PL__ytX-LC-xMi8XHL7HKeLbPpCIift9Q1">
+            <img src="https://raw.githubusercontent.com/lucastwong/lucastwong.github.io/master/youtube_PNG21.png" style="width:40%">
+        </div>
+        <div class="col-sm-6">
+          <a href="https://www.instantencore.com/contributor/contributor.aspx?CId=5116602">
+            <img src="https://raw.githubusercontent.com/lucastwong/website/master/InstantEncore.png" style="width:100%">
+        </div>
+      </div>
+      </a>
+     </div>
+    <div id="review" class="container-fluid text-center">
+      <h2>Reviews</h2>
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="10000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <p>"As long a teacher of collaborative pianists, I have been most concerned in this pandemic about the current lack of successful solutions for partnering singers. I have searched carefully for technology that really works and 4D Piano is the only solution I have found. Amazingly, it is the answer for our current desperation, but it is a superior solution for all times. Invented by a superb pianist, Lucas Wong, whom I have known well for some years as a versatile performer and teacher in solo, chamber, song, and operatic repertoire, 4D Piano not only meets the needs of singers, but it trains them rhythmically, in ways we often neglect, through visual sharing of the piano part. It also trains pianists who, while not actually playing the piano, are in the same collaborative relationship at any given moment by just the movement of a finger! As the operator of 4D Piano, one can partner in ritardandi, accelerandi, and fermati as well as in leadership and sensitive following of a singer just as one would do when actually playing for the singer. There is no lag time and real and detailed ensemble is possible! Thank you, Lucas!"<br><br><span>Margo Garrett<br>Collaborative Performing and Recording Pianist<br>The Juilliard School Emerita</span></p>
+          </div>
+          <div class="item">
+            <p>"His playing is both brilliant and sensitive, and his tone is like a pearl necklace… Wong builds up a tremendous head of steam, and he does it without ever raising his voice, so to speak. Even in the smaller works, though, he makes a big impression."<br><br><span>Fanfare</span></p>
+          </div>
+          <div class="item">
+            <p>"In Wong’s hands, the clarity and deeply expressive moods and colors of the eight preludes come across with the greatest beauty and assurance, leading us to marvel that, apparently, no other pianists have ever recorded this work…Wong’s performances in this recital made the point come across with a greater clarity than I’d ever imagined."<br><br><span>Atlanta Audio Club</span></p>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br>
+      <h4>Full review on:</h4>
+      <a href="https://www.gramophone.co.uk/review/lucas-wong-rediscovering-couperin-rameau">
+      <img src="https://raw.githubusercontent.com/lucastwong/website/master/Gramophone%20Logo.png" style="width:100%">
+      </a>
+    </div>
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Copyright 2020 © Dr. Lucas T Wong</p>
+    </footer>
+    <script>
+    </script>
+  </body>
+</html>
+
+
+
